@@ -1,6 +1,6 @@
 cask "swarm" do
-  version "0.1.13"
-  sha256 "347b796dc499e745e5b34fbfc08cbac00332eccbf6eafe199e5c545068551e30"
+  version "0.1.14"
+  sha256 "3b45e3e46d1a07c0f78322fb00184c2898eb855e0949b597e69a61d8893617ff"
 
   url "https://github.com/arturborycki/swarm-term/releases/download/v#{version}/Swarm-#{version}.dmg"
   name "Swarm"
@@ -13,6 +13,8 @@ cask "swarm" do
   end
 
   auto_updates true
+  # The swarmd formula installs the same commands.
+  conflicts_with formula: "swarmd"
   depends_on macos: :ventura
 
   app "Swarm.app"
